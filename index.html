@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Aminul Islam - Portfolio</title>
+    <title>Portfolio</title>
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -18,32 +18,33 @@
             border: none;
             outline: none;
             scroll-behavior: smooth;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins',sans-serif;
         }
 
-        :root {
-            --bg-color: #1a1a2e;
-            --second-bg-color: #16213e;
-            --text-color: #fff;
-            --main-color: #4cc9f0;
+        :root{
+            --bg-color:#000000;
+            --second-bg-color:#323946;
+            --text-color:#fff;
+            --main-color:#0ef;
+            --n-color:rgba(119, 171, 173, 0);
         }
 
-        html {
+        html{
             font-size: 62.5%;
             overflow-x: hidden;
         }
 
-        body {
+        body{
             background: var(--bg-color);
             color: var(--text-color);
         }
 
-        section {
+        section{
             min-height: 100vh;
             padding: 10rem 9% 2rem;
         }
 
-        .header {
+        .header{
             position: fixed;
             top: 0;
             left: 0;
@@ -55,19 +56,18 @@
             align-items: center;
             z-index: 100;
         }
-
-        .header.sticky {
-            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        .header.sticky{
+            border-bottom: .1rem solid rgb(0,0,0,.2);
         }
 
-        .logo {
+        .logo{
             font-size: 2.5rem;
             color: var(--text-color);
             font-weight: 600;
             cursor: default;
         }
 
-        .navbar a {
+        .navbar a{
             font-size: 1.7rem;
             color: var(--text-color);
             margin-left: 4rem;
@@ -75,64 +75,59 @@
         }
 
         .navbar a:hover,
-        .navbar a.active {
+        .navbar a.active{
             color: var(--main-color);
         }
 
-        #menu-icon {
+        #menu-icon{
             font-size: 3.6rem;
             color: var(--text-color);
             display: none;
         }
 
-        .home {
+        .home{
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        .home-img img {
-            width: 35vw;
+        .home-img img{
+            width: 55vh;
+            height: 70vh;
             animation: floatImage 4s ease-in-out infinite;
         }
-
-        @keyframes floatImage {
-            0% {
+        @keyframes floatImage{
+            0%{
                 transform: translateY(0);
             }
-            50% {
+            50%{
                 transform: translateY(-2.4rem);
             }
-            100% {
+            100%{
                 transform: translateY(0);
             }
         }
 
-        .home-content h3 {
+        .home-content h3{
             font-size: 3.2rem;
             font-weight: 700;
         }
-
-        .home-content h3:nth-of-type(2) {
+        .home-content h2:nth-of-type(2){
             margin-bottom: 2rem;
         }
 
-        span {
+        span{
             color: var(--main-color);
         }
 
-        .home-content h1 {
+        .home-content h1{
             font-size: 5.6rem;
             font-weight: 700;
             line-height: 1.3;
         }
-
-        .home-content p {
+        .home-content p{
             font-size: 1.6rem;
-            margin: 2rem 0 3rem;
         }
-
-        .social-media a {
+        .social-media a{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -147,13 +142,13 @@
             transition: .5s ease;
         }
 
-        .social-media a:hover {
+        .social-media a:hover{
             background: var(--main-color);
             color: var(--second-bg-color);
             box-shadow: 0 0 1rem var(--main-color);
         }
 
-        .btn {
+        .btn{
             display: inline-block;
             padding: 1rem 2.8rem;
             background: var(--main-color);
@@ -166,38 +161,32 @@
             transition: .5s ease;
         }
 
-        .btn:hover {
+        .btn:hover{
             box-shadow: none;
         }
 
-        .about {
+        .about{
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 2rem;
             background: var(--bg-color);
         }
-
-        .about-img img {
-            width: 35vw;
+        .about-img img{
+            width: 35vh; 
         }
-
-        .heading {
+        .heading{
             text-align: center;
             font-size: 4.5rem;
-            margin-bottom: 5rem;
         }
-
-        .about-content h2 {
+        .about-content h1{
             text-align: left;
             line-height: 1.2;
         }
-
-        .about-content h3 {
+        .about-content h3{
             font-size: 2.6rem;
         }
-
-        .about-content p {
+        .about-content p{
             font-size: 1.6rem;
             margin: 2rem 0 3rem;
         }
@@ -206,104 +195,155 @@
         .education {
             background: var(--second-bg-color);
         }
-
+        
+        .education h2 {
+            margin-bottom: 5rem;
+        }
+        
         .education-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 2.5rem;
         }
-
+        
         .education-box {
             background: var(--bg-color);
-            padding: 3rem 2rem;
             border-radius: 2rem;
+            padding: 3rem 2rem 4rem;
             text-align: center;
             border: .2rem solid var(--bg-color);
             transition: .5s ease;
         }
-
+        
         .education-box:hover {
             border-color: var(--main-color);
             transform: scale(1.02);
         }
-
+        
         .education-box i {
-            font-size: 5rem;
+            font-size: 7rem;
             color: var(--main-color);
             margin-bottom: 1rem;
         }
-
+        
         .education-box h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2.6rem;
         }
-
+        
         .education-box p {
-            font-size: 1.4rem;
-            margin: 1rem 0 2rem;
+            font-size: 1.6rem;
+            margin: 1rem 0 3rem;
+        }
+        
+        .education-box .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: .1rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+        
+        .education-box .btn:hover {
+            box-shadow: none;
         }
 
-        /* Skills Section */
-        .skills {
-            background: var(--bg-color);
+        .services h2{
+            margin-bottom: 5rem;
         }
-
-        .skills-container {
+        .services-container{
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 2rem;
         }
 
-        .skill-item {
+        .services-container .services-box{
+            flex: 1 1 30rem;
             background: var(--second-bg-color);
-            padding: 1.5rem 3rem;
+            padding: 3rem 2rem 4rem;
             border-radius: 2rem;
+            text-align: center;
+            border: .6rem solid var(--bg-color);
+            transition: .5s ease;
+        }
+
+        .services-container .services-box:hover{
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+
+        .services-box i{
+            font-size: 7rem;
+            color: var(--main-color);
+        }
+        .services-box h3{
+            font-size: 2.6rem;
+        }
+        .services-box p{
             font-size: 1.6rem;
-            transition: .3s;
+            margin: 1rem 0 3rem;
         }
+    .portfolio-layer .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
 
-        .skill-item:hover {
-            background: var(--main-color);
-            color: var(--second-bg-color);
-            transform: translateY(-5px);
-        }
+.portfolio-layer .project-tools span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--main-color);
+}
+        /* ---------------------portfolio Section----------------------------------------- */
 
-        /* Projects Section */
-        .portfolio {
+        .portfolio{
             background: var(--second-bg-color);
         }
 
-        .portfolio-container {
+        .portfolio h2{
+            margin-bottom: 4rem;
+        }
+        .portfolio-container{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3,1fr);
+            align-items: center;
             gap: 2.5rem;
         }
-
-        .portfolio-box {
+        .portfolio-container .portfolio-box{
             position: relative;
-            border-radius: 2rem;
+            border-radius: 6rem;
             box-shadow: 0 0 1rem var(--bg-color);
             overflow: hidden;
             display: flex;
+            border-color: solid rgb(0, 187, 255);
         }
-
-        .portfolio-box img {
+        .portfolio-box img{
             width: 100%;
             transition: .5s ease;
         }
 
-        .portfolio-box:hover img {
+        .portfolio-box:hover img{
             transform: scale(1.1);
         }
 
-        .portfolio-box .portfolio-layer {
+        .portfolio-box .portfolio-layer{
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, .7), var(--main-color));
+            background: linear-gradient(rgb(35, 33, 33), var(--main-color));
             display: flex;
             justify-content: center;
             align-items: center;
@@ -314,20 +354,20 @@
             transition: .5s ease;
         }
 
-        .portfolio-box:hover .portfolio-layer {
+        .portfolio-box:hover .portfolio-layer{
             transform: translateY(0);
         }
 
-        .portfolio-layer h4 {
-            font-size: 2.5rem;
+        .portfolio-layer h4{
+            font-size: 3rem;
         }
 
-        .portfolio-layer p {
-            font-size: 1.4rem;
+        .portfolio-layer p{
+            font-size: 1.6rem;
             margin: .3rem 0 1rem;
         }
 
-        .portfolio-layer a {
+        .portfolio-layer a{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -336,103 +376,62 @@
             background: var(--text-color);
             border-radius: 50%;
         }
-
-        .portfolio-layer a i {
+        .portfolio-layer a i{
             font-size: 2rem;
             color: var(--second-bg-color);
         }
 
-        /* Certifications Section */
-        .certifications {
-            background: var(--bg-color);
+        /* ===========================contact Section ================================ */
+        .contact h2{
+            margin-bottom: 3rem;
         }
-
-        .certification-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .certification-box {
-            background: var(--second-bg-color);
-            padding: 2rem;
-            border-radius: 1rem;
-            transition: transform 0.3s;
-            margin-bottom: 2rem;
-        }
-
-        .certification-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .certification-box h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .certification-box p {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--second-bg-color);
-        }
-
-        .contact form {
+        .contact form{
             max-width: 70rem;
             margin: 1rem auto;
             text-align: center;
             margin-bottom: 3rem;
         }
-
-        .contact form .input-box {
+        .contact form .input-box{
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
 
         .contact form .input-box input,
-        .contact form textarea {
+        .contact form textarea{
             width: 100%;
             padding: 1.5rem;
             font-size: 1.6rem;
             color: var(--text-color);
-            background: var(--bg-color);
+            background: var(--second-bg-color);
             border-radius: .8rem;
             margin: .7rem 0;
         }
 
-        .contact form .input-box input {
+        .contact form .input-box input{
             width: 49%;
         }
-
-        .contact form textarea {
+        .contact form textarea{
             resize: none;
         }
-
-        .contact form .btn {
+        .contact form .btn{
             margin-top: 2rem;
             cursor: pointer;
         }
 
-        /* Footer */
-        .footer {
+        /* =========================footer design =========================== */
+        .footer{
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             padding: 2rem 9%;
-            background: var(--bg-color);
+            background: var(--second-bg-color);
         }
-
-        .footer-text p {
+        .footer-text p{
             font-size: 1.6rem;
         }
-
-        .footer-iconTop a {
+        .footer-iconTop a{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -442,113 +441,266 @@
             transition: .5s ease;
         }
 
-        .footer-iconTop a:hover {
+        .footer-iconTop a:hover{
             box-shadow: 0 0 1rem var(--main-color);
         }
-
-        .footer-iconTop a i {
+        .footer-iconTop a i{
             font-size: 2.4rem;
             color: var(--second-bg-color);
         }
 
-        /* BREAKPOINTS */
-        @media (max-width: 1200px) {
-            html {
+        /* ========================breakpoints===================================== */
+        @media(max-width: 1200px){
+            html{
                 font-size: 55%;
             }
         }
 
-        @media (max-width: 991px) {
-            .header {
+        @media(max-width: 991px){
+            .header{
                 padding: 2rem 3%;
             }
-
-            section {
+            section{
+                padding:10rem 3% 2rem  ;
+            }
+            .services{
                 padding: 10rem 3% 2rem;
+            }
+            .portfolio{
+                padding-bottom: 7rem;
+            }
+            .contact{
+                min-height: auto;
+            }
+            .fotter{
+                padding: 2rem 3%;
+            }
+            .education-container {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 768px) {
-            #menu-icon {
+        @media(max-width: 768px){
+            #menu-icon{
                 display: block;
             }
-
-            .navbar {
+            .navbar{
                 position: absolute;
-                top: 100%;
+                top:100%;
                 left: 0;
                 width: 100%;
                 padding: 1rem 3%;
                 background: var(--bg-color);
-                border-top: .1rem solid rgba(0, 0, 0, .2);
-                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+                border-top: .1rem solid rgb(0,0,0,.2);
+                box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
                 display: none;
+
             }
 
-            .navbar.active {
+            .navbar.active{
                 display: block;
             }
-
-            .navbar a {
+            .navbar a{
                 display: block;
                 font-size: 2rem;
                 margin: 3rem 0;
             }
-
-            .home {
+            .home{
                 flex-direction: column;
             }
-
-            .home-content h3 {
+            .home-content h3{
                 font-size: 2.6rem;
             }
-
-            .home-content h1 {
+            .home-content h1{
                 font-size: 5rem;
             }
-
-            .home-img img {
+            .home-img img{
                 width: 70vw;
                 margin-top: 4rem;
             }
-
-            .about {
+            .about{
                 flex-direction: column-reverse;
             }
-
-            .about img {
+            .about img{
                 width: 70vw;
                 margin-top: 4rem;
             }
-        }
-
-        @media (max-width: 450px) {
-            html {
-                font-size: 50%;
+            .services h2{
+                margin-bottom: 3rem;
+            }
+            .portfolio h2{
+                margin-bottom: 3rem;
+            }
+            .portfolio-container{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .education-container {
+                grid-template-columns: 1fr;
             }
 
-            .contact form .input-box input {
+        }
+        @media(max-width: 617px){
+            .portfolio-container{
+                grid-template-columns: 1fr;
+            }
+        }
+        @media(max-width: 450px){
+            html{
+                font-size: 50%;
+            }
+            .contact form .input-box input{
                 width: 100%;
             }
         }
-
-        @media (max-width: 365px) {
-            .home-img img {
+        @media(max-width: 365px){
+            .home-img img{
                 width: 90vw;
             }
-
-            .about-img img {
+            .about-img img{
                 width: 90vw;
             }
-
-            .footer {
+            .footer{
                 flex-direction: column-reverse;
             }
-
-            .footer p {
+            .footer p{
                 text-align: center;
                 margin-top: 2rem;
             }
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--bg-color);
+            padding: 10rem 9% 2rem;
+        }
+        
+        .experience h2 {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .experience-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .experience-box {
+            flex: 1 1 30rem;
+            background: var(--second-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition: .5s ease;
+        }
+        
+        .experience-box:hover {
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+        
+        .experience-box i {
+            font-size: 5rem;
+            color: var(--main-color);
+            margin-bottom: 1rem;
+        }
+        
+        .experience-box h3 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-box p {
+            font-size: 1.6rem;
+            margin: 1rem 0;
+        }
+        
+        .experience-box .date {
+            font-size: 1.4rem;
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .experience-box .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .experience-box .skills span {
+            background: var(--bg-color);
+            color: var(--main-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background: var(--second-bg-color);
+            padding: 10rem 9% 2rem;
+        }
+        
+        .achievements h2 {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-box {
+            background: var(--bg-color);
+            padding: 3rem 2rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition: .5s ease;
+        }
+        
+        .achievement-box:hover {
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+        
+        .achievement-box i {
+            font-size: 5rem;
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .achievement-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-box p {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .achievement-box .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            font-size: 1.4rem;
+            color: var(--second-bg-color);
+            transition: .5s ease;
+        }
+        
+        .achievement-box .btn:hover {
+            box-shadow: 0 0 1rem var(--main-color);
         }
     </style>
 </head>
@@ -564,9 +716,10 @@
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#services">Skills</a>
             <a href="#portfolio">Projects</a>
-            <a href="#certifications">Certifications</a>
+            <a href="#achievements">Achievements</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -574,165 +727,247 @@
     <!--------------------------------------- home section design -------------------------------------------->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, It's Me</h3>
+            <h3>Hello It's Me</h3>
             <h1>MD. Aminul Islam</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>Passionate Web Developer with expertise in backend development using the Spring Boot framework and Hibernate for seamless database integration. Strong proficiency in Java, my preferred programming language. Skilled in frontend technologies to create dynamic and user-friendly interfaces.
+            <h3>And I'm a <span class="multiple-text"> </span></h3>
+            <p>I have just completed my graduation from Bangladesh
+                University of Business and Technology. Basically I am a
+                web developer as well as software development. As a web
+                developer I know Laravel framework, PHP, MySQL. I am a
+                competitive programmer. I am an expert in Java language.
+                Some familiarity with Java Spring framework.
+                
             </p>
             <div class="social-media">
                 <a href="https://www.facebook.com/jovanifte.aminul"><i class='bx bxl-facebook'></i></a>
                 <a href="https://www.youtube.com/channel/UC36d0ucKf6-2GhJMqhCv6Tg"><i class='bx bxl-youtube'></i></a>
-                <a href="https://www.linkedin.com/in/md-aminul-islam-437b0a24b/"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/MissionXOR"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/md-aminul-islam-437b0a24b/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/MissionXOR"><i class='bx bxl-github' ></i></a>
             </div>
             <a href="https://drive.google.com/file/d/1meKj0UzT1GT4NihDbAyXHV4THc0HAMiw/view?usp=sharing" class="btn">Download Resume</a>
         </div>
         <div class="home-img">
-            <img src="me.png" alt="">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Profile Image">
         </div>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VwZzNqZ2N2bG1mZ2Z5bXh0bWx3bW5zZ2J3eGZ4eGx0bW5yYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding GIF" width="200px">
     </section>
 
     <!-- -----------------------------------about section design-------------------------------- -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="me.png" alt="">
-
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="About Image">
         </div>
         <div class="about-content">
             <h1 class="heading">About <span>Me</span></h1>
-            <h3>Web Developer | Software Developer | Java Expert</h3>
+            <h3><span>They Think I'm a losser </span></h3>
+            <h3>But I'm am the Game Changer </h3>
+            <h3><span>Web Developer</span> | <span>Software Developer</span> | <span>JAVA Expert</span> </h3>
             <p>
-                Hi I'm Md. Aminul Islam, a recent Computer Science graduate specializing in software engineering. I'm passionate about backend development with Java and Spring Boot, and I enjoy creating efficient database solutions with Hibernate and MySQL. My projects demonstrate my ability to build complete, functional web applications that solve real-world problems.
+                Hi I'm Md. Aminul Islam. I am a computer science graduate with expertise in Java programming and full-stack development. 
+                I'm passionate about creating efficient software solutions and have experience with web frameworks like Laravel and Spring Boot. 
+                My problem-solving skills and competitive programming background help me tackle complex challenges effectively.
             </p>
-            <a href="#contact" class="btn">Contact Me</a>
+            <a href="#" class="btn">Read More</a>
         </div>
     </section>
 
     <!-- Education Section -->
     <section class="education" id="education">
         <h2 class="heading">My <span>Education</span></h2>
-
+        
         <div class="education-container">
             <div class="education-box">
                 <i class='bx bxs-graduation'></i>
-                <h3>Bachelor of Science in CSE</h3>
-                <p>Bangladesh University of Business and Technology (BUBT) | 2020-2024</p>
-                <p>CGPA: 3.66/4.00</p>
+                <h3>Bachelor of Science</h3>
+                <p>Computer Science and Engineering</p>
+                <p>Bangladesh University of Business and Technology (BUBT)</p>
+                <p>2020-2024 | CGPA: 3.66/4.00</p>
                 <p>Major in Software Engineering</p>
             </div>
-
+            
             <div class="education-box">
                 <i class='bx bxs-school'></i>
-                <h3>Higher Secondary Certificate (HSC)</h3>
-                <p>Monipur Uchcha Vidyalaya & College | 2019</p>
+                <h3>Higher Secondary</h3>
                 <p>Science Group</p>
-                <p>GPA: 4.50/5.00</p>
+                <p>Monipur Uchcha Vidyalaya & College</p>
+                <p>2019 | GPA: 4.50/5.00</p>
             </div>
-
+            
             <div class="education-box">
                 <i class='bx bxs-school'></i>
-                <h3>Secondary School Certificate (SSC)</h3>
-                <p>Chakhar Fazlul Huq Institution | 2017</p>
+                <h3>Secondary School</h3>
                 <p>Science Group</p>
-                <p>GPA: 4.77/5.00</p>
+                <p>Chakhar Fazlul Huq Institution</p>
+                <p>2017 | GPA: 4.77/5.00</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="heading">My <span>Experience</span></h2>
+        
+        <div class="experience-container">
+            <div class="experience-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Software Engineer Intern</h3>
+                <p>ACI Godrej Agrovet Pvt. Ltd.</p>
+                <p class="date">2023 (3 months)</p>
+                <p>Completed internship in IT and Software Development department, working on real-world projects and gaining hands-on experience with enterprise systems.</p>
+                <div class="skills">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>MySQL</span>
+                    <span>System Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------services Design (Skills)------------------------------->
+    <section class="services" id="services">
         <h2 class="heading">My <span>Skills</span></h2>
 
-        <div class="skills-container">
-            <div class="skill-item">Java</div>
-            <div class="skill-item">Spring Boot</div>
-            <div class="skill-item">Python</div>
-            <div class="skill-item">MySQL</div>
-            <div class="skill-item">Hibernate</div>
-            <div class="skill-item">HTML</div>
-            <div class="skill-item">CSS</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">Thymeleaf</div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">My <span>Projects</span></h2>
-
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="mindgenix.jpg" alt="MindGenix">
-                <div class="portfolio-layer">
-                    <h4>MindGenix – AI-Powered Learning Platform</h4>
-                    <p>Built an intelligent learning platform with personalized questions, progress insights, and smart suggestions. Features secure user registration with email verification and admin dashboard.</p>
-                    <p><strong>Tools:</strong> Spring Boot, MySQL, HTML/CSS, JavaScript, Thymeleaf</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="leave-system.jpg" alt="Leave Management System">
-                <div class="portfolio-layer">
-                    <h4>Leave Request Management System</h4>
-                    <p>HR workflow automation platform featuring secure login, real-time leave tracking, automated notifications, and detailed leave history for users and admins.</p>
-                    <p><strong>Tools:</strong> Spring Boot, MySQL, HTML/CSS, JavaScript, Thymeleaf</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="calorie-bistro.jpg" alt="CalorieBalance Bistro">
-                <div class="portfolio-layer">
-                    <h4>CalorieBalance Bistro</h4>
-                    <p>Innovative food ordering system with dietary restrictions for diabetics and dieters, providing alerts for high sugar/calorie intake.</p>
-                    <p><strong>Capstone Project, Final Semester 2024</strong></p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
-        <h2 class="heading">My <span>Certifications</span></h2>
-
-        <div class="certification-container">
-            <div class="certification-box">
-                <h3>Java Certificate</h3>
-                <p>HackerRank Certification</p>
+         <div class="services-container">
+            <div class="services-box">
+                <i class='bx bxl-java' ></i>
+                <h3>JAVA</h3>
+                <p>Expert in Java programming with experience in Spring Boot, Hibernate, and competitive programming using Java.</p>
                 <a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn">View Certificate</a>
             </div>
 
-            <div class="certification-box">
-                <h3>Software Engineer Intern Certificate</h3>
-                <p>HackerRank Certification</p>
-                <a href="https://www.hackerrank.com/certificates/f20fe67a6946" class="btn">View Certificate</a>
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Backend Development</h3>
+                <p>Spring Boot, Hibernate, Laravel, PHP, MySQL, REST APIs, Microservices architecture.</p>
+                <a href="#" class="btn">Read More</a>
             </div>
+        
+            <div class="services-box">
+                <i class='bx bx-code-curly'></i>
+                <h3>Frontend Development</h3>
+                <p>HTML, CSS, JavaScript, Thymeleaf, Responsive Design, UI/UX principles.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>    
 
-            <div class="certification-box">
-                <h3>BEC ROBO MANIA 2022</h3>
-                <p>Robotics Competition</p>
-                <a href="https://drive.google.com/file/d/1Mq3mRFLl11LsmmBSP1Rb7n15gW2jgnuug/view" class="btn">View Certificate</a>
-            </div>
+        </div>
+    </section>
+<!-- ------------------portfolio Section (Projects)--------------------------------- -->
+<section class="portfolio" id="portfolio">
+    <h2 class="heading">My <span>Projects</span></h2>
 
-            <div class="certification-box">
-                <h3>IUBAT Techathon 2024 Champion</h3>
-                <p>Technology Competition Winner</p>
-                <a href="#" class="btn">View Details</a>
-            </div>
-
-            <div class="certification-box">
-                <h3>Python Certificate</h3>
-                <p>HackerRank Certification</p>
-                <a href="https://www.hackerrank.com/certificates/a8f24e2c3a38" class="btn">View Certificate</a>
+    <div class="portfolio-container">
+           <!-- MindGenix Project -->
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="MindGenix AI Learning Platform">
+            <div class="portfolio-layer">
+                <h4>MindGenix</h4>
+                <p>AI-Powered Learning Platform with personalized questions, progress tracking, and smart suggestions.</p>
+                <div class="project-tools">
+                    <span>Spring Boot</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Thymeleaf</span>
+                </div>
+                <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
 
-        <div style="margin-top: 5rem; text-align: center;">
-            <h3 style="font-size: 2.5rem; margin-bottom: 2rem;">Spring Boot Live Projects</h3>
-            <a href="https://jovan-springsecurity.up.railway.app/" class="btn" style="margin-right: 2rem;">Project 1</a>
-            <a href="https://productrestapi-jovan.up.railway.app/swagger-ui/index.html" class="btn">Project 2</a>
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="DocuLaw Analyzer">
+            <div class="portfolio-layer">
+                <h4>DocuLaw Analyzer</h4>
+                <p>Automated legal case data processing system using Java, Spring Boot, Apache POI for Excel/XML document analysis.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Leave Management">
+            <div class="portfolio-layer">
+                <h4>Leave Request System</h4>
+                <p>HR workflow automation platform with Spring Boot, MySQL for managing employee leave requests and approvals.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+    </div>
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Home Project">
+            <div class="portfolio-layer">
+                <h4>Smart Home</h4>
+                <p>IoT-based home automation system that can remotely switch household appliances using voice commands and phone dials.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Ordering System">
+            <div class="portfolio-layer">
+                <h4>CalorieBalance Bistro</h4>
+                <p>Innovative food ordering system with dietary features for normal people, diabetics, and dieters with calorie alerts.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-box">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Result Management">
+            <div class="portfolio-layer">
+                <h4>Result Management System</h4>
+                <p>Java desktop application with JFrame, Swing, and MySQL for managing student results with CRUD operations.</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+
+     
+</section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <h2 class="heading">My <span>Achievements</span></h2>
+        
+        <div class="achievements-container">
+            <div class="achievement-box">
+                <i class='bx bx-certification'></i>
+                <h3>Java Certification</h3>
+                <p>HackerRank certified Java developer with advanced problem-solving skills.</p>
+                <a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn">View</a>
+            </div>
+            
+            <div class="achievement-box">
+                <i class='bx bx-certification'></i>
+                <h3>Software Engineer Intern</h3>
+                <p>Certified for completing internship at ACI Godrej Agrovet Pvt. Ltd.</p>
+                <a href="https://www.hackerrank.com/certificates/f20fe67a6946" class="btn">View</a>
+            </div>
+            
+            <div class="achievement-box">
+                <i class='bx bx-trophy'></i>
+                <h3>BEC ROBO MANIA 2022</h3>
+                <p>Participated and showcased skills in robotics competition.</p>
+                <a href="https://drive.google.com/file/d/1Mq3mRFLi1LLsmmBSP1Rb7nI5gW2Jgmug/view" class="btn">View</a>
+            </div>
+            
+            <div class="achievement-box">
+                <i class='bx bx-trophy'></i>
+                <h3>IUBAT Techathon 2024</h3>
+                <p>Champion in university-level tech competition.</p>
+                <a href="#" class="btn">View</a>
+            </div>
+            
+            <div class="achievement-box">
+                <i class='bx bx-certification'></i>
+                <h3>Python Certification</h3>
+                <p>HackerRank certified Python programmer.</p>
+                <a href="https://www.hackerrank.com/certificates/a8f24e2c3a38" class="btn">View</a>
+            </div>
+            
+            <div class="achievement-box">
+                <i class='bx bx-code'></i>
+                <h3>Spring Boot Projects</h3>
+                <p>Live projects demonstrating Spring Boot expertise.</p>
+                <a href="https://jovan-springsecurity.up.railway.app/" class="btn">Project 1</a>
+                <a href="https://productrestapi-jovan.up.railway.app/swagger-ui/index.html" class="btn">Project 2</a>
+            </div>
         </div>
     </section>
 
@@ -750,14 +985,14 @@
                 <input type="text" placeholder="E-mail Subject">
             </div>
             <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <input type="submit" value="Send Message" class="btn" >
         </form>
     </section>
 
     <!-- -----------------footer Design----------------------------- -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2024 by MD Aminul Islam | All Rights Reserved.</p>
+            <p>Copyright &copy; 2023 by X-OR | All Rights Reserved.</p>
         </div>
         <div class="footer-iconTop">
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
@@ -767,45 +1002,48 @@
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- typed js -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
     <script>
-        // Typed.js initialization
-        const typed = new Typed('.multiple-text', {
-            strings: ['Java Developer', 'Spring Boot Expert', 'Backend Engineer', 'Web Developer'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 1000,
-            loop: true
-        });
-
-        // Sticky header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-        });
-
-        // Mobile menu toggle
-        const menuIcon = document.querySelector('#menu-icon');
-        const navbar = document.querySelector('.navbar');
+        // Toggle Icon NavBar
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
 
         menuIcon.onclick = () => {
             menuIcon.classList.toggle('bx-x');
             navbar.classList.toggle('active');
         };
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuIcon.classList.remove('bx-x');
-                navbar.classList.remove('active');
-            });
-        });
+        // Scroll Section Activated Link
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+        
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
 
-        // Scroll reveal animations
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                };
+            });
+
+            // Sticky NavBar
+            let header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 100);
+            
+            // Remove toggle icon and navbar when click navbar links (scroll)
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        // Scroll Reveal
         ScrollReveal({
-            reset: true,
             distance: '80px',
             duration: 2000,
             delay: 200
@@ -815,6 +1053,15 @@
         ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
         ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
         ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+        // Typed JS
+        const typed = new Typed('.multiple-text', {
+            strings: ['Competitive Programmer', 'JAVA Expert', 'Web Developer', 'Software Developer'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
     </script>
 </body>
 </html>
