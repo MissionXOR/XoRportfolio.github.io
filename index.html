@@ -190,6 +190,62 @@
             font-size: 1.6rem;
             margin: 2rem 0 3rem;
         }
+        /* Videos Section */
+.videos {
+    background: var(--bg-color);
+    padding: 10rem 9% 2rem;
+}
+
+.videos h2 {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.video-box {
+    background: var(--second-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    height: 100%;
+}
+
+.video-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.video-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.video-icon {
+    font-size: 6rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    transition: .3s ease;
+}
+
+.video-box:hover .video-icon {
+    transform: scale(1.1);
+}
+
+.video-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
 
         /* Education Section */
         .education {
@@ -719,6 +775,7 @@
             <a href="#experience">Experience</a>
             <a href="#services">Skills</a>
             <a href="#portfolio">Projects</a>
+             <a href="#videos">Project Videos</a>
             <a href="#achievements">Achievements</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -730,24 +787,23 @@
             <h3>Hello It's Me</h3>
             <h1>MD. Aminul Islam</h1>
             <h3>And I'm a <span class="multiple-text"> </span></h3>
-            <p>I have just completed my graduation from Bangladesh
-                University of Business and Technology. Basically I am a
-                web developer as well as software development. As a web
-                developer I know Laravel framework, PHP, MySQL. I am a
-                competitive programmer. I am an expert in Java language.
-                Some familiarity with Java Spring framework.
+            <p>Passionate Web Developer with expertise in backend development using the Spring Boot framework and
+ Hibernate for seamless database integration. Strong proficiency in Java, my preferred programming
+ language. Skilled in frontend technologies, including HTML, CSS, and Thymeleaf, to create dynamic and
+ user-friendly interfaces. Experienced in database management using MySQL, ensuring robust and efficient
+ data handling. Committed to delivering high-quality, scalable, and maintainable web solutions.
                 
             </p>
             <div class="social-media">
                 <a href="https://www.facebook.com/jovanifte.aminul"><i class='bx bxl-facebook'></i></a>
                 <a href="https://www.youtube.com/channel/UC36d0ucKf6-2GhJMqhCv6Tg"><i class='bx bxl-youtube'></i></a>
-                <a href="https://www.linkedin.com/in/md-aminul-islam-437b0a24b/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="www.linkedin.com/in/aminul-jovan"><i class='bx bxl-linkedin' ></i></a>
                 <a href="https://github.com/MissionXOR"><i class='bx bxl-github' ></i></a>
             </div>
-            <a href="https://drive.google.com/file/d/1meKj0UzT1GT4NihDbAyXHV4THc0HAMiw/view?usp=sharing" class="btn">Download Resume</a>
+            <a href="" class="btn">Download Resume</a>
         </div>
         <div class="home-img">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Profile Image">
+            <img src="me.png" alt="Profile Image">
         </div>
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VwZzNqZ2N2bG1mZ2Z5bXh0bWx3bW5zZ2J3eGZ4eGx0bW5yYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding GIF" width="200px">
     </section>
@@ -755,16 +811,16 @@
     <!-- -----------------------------------about section design-------------------------------- -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="About Image">
+            <img src="me.png" alt="About Image">
         </div>
         <div class="about-content">
             <h1 class="heading">About <span>Me</span></h1>
-            <h3><span>They Think I'm a losser </span></h3>
-            <h3>But I'm am the Game Changer </h3>
-            <h3><span>Web Developer</span> | <span>Software Developer</span> | <span>JAVA Expert</span> </h3>
+            <h3><span>Hi I'm Md. Aminul Islam. </span></h3>
+            <h3>I'm a</h3>
+            <h3><span>Software Developer</span> | <span>Web Developer</span> |  <span>JAVA Expert</span> </h3>
             <p>
-                Hi I'm Md. Aminul Islam. I am a computer science graduate with expertise in Java programming and full-stack development. 
-                I'm passionate about creating efficient software solutions and have experience with web frameworks like Laravel and Spring Boot. 
+               I am a computer science graduate with expertise in Java programming and full-stack development. 
+                I'm passionate about creating efficient software solutions and have experience with web frameworks Spring Boot. 
                 My problem-solving skills and competitive programming background help me tackle complex challenges effectively.
             </p>
             <a href="#" class="btn">Read More</a>
@@ -810,9 +866,9 @@
         <div class="experience-container">
             <div class="experience-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>Software Engineer Intern</h3>
+                <h3>Software Developer & IT Intern</h3>
                 <p>ACI Godrej Agrovet Pvt. Ltd.</p>
-                <p class="date">2023 (3 months)</p>
+                <p class="date">Feb-2025 to June-2025 (4 months)</p>
                 <p>Completed internship in IT and Software Development department, working on real-world projects and gaining hands-on experience with enterprise systems.</p>
                 <div class="skills">
                     <span>Java</span>
@@ -839,14 +895,14 @@
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>Backend Development</h3>
-                <p>Spring Boot, Hibernate, Laravel, PHP, MySQL, REST APIs, Microservices architecture.</p>
+                <p>Spring Boot, Hibernate, Mysql, REST APIS, Microservices architecture.</p>
                 <a href="#" class="btn">Read More</a>
             </div>
         
             <div class="services-box">
                 <i class='bx bx-code-curly'></i>
                 <h3>Frontend Development</h3>
-                <p>HTML, CSS, JavaScript, Thymeleaf, Responsive Design, UI/UX principles.</p>
+                <p>HTML, CSS, JavaScript, Thymeleaf, Responsive Design.</p>
                 <a href="#" class="btn">Read More</a>
             </div>    
 
@@ -878,6 +934,12 @@
             <div class="portfolio-layer">
                 <h4>DocuLaw Analyzer</h4>
                 <p>Automated legal case data processing system using Java, Spring Boot, Apache POI for Excel/XML document analysis.</p>
+                 <div class="project-tools">
+                    <span>Spring Boot</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Thymeleaf</span>
+                </div>
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
@@ -887,11 +949,16 @@
             <div class="portfolio-layer">
                 <h4>Leave Request System</h4>
                 <p>HR workflow automation platform with Spring Boot, MySQL for managing employee leave requests and approvals.</p>
+                 <div class="project-tools">
+                    <span>Spring Boot</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Thymeleaf</span>
+                </div>
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-    </div>
-        <div class="portfolio-box">
+         <div class="portfolio-box">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Home Project">
             <div class="portfolio-layer">
                 <h4>Smart Home</h4>
@@ -899,8 +966,7 @@
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-
-        <div class="portfolio-box">
+         <div class="portfolio-box">
             <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Ordering System">
             <div class="portfolio-layer">
                 <h4>CalorieBalance Bistro</h4>
@@ -908,8 +974,7 @@
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-
-        <div class="portfolio-box">
+                <div class="portfolio-box">
             <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Result Management">
             <div class="portfolio-layer">
                 <h4>Result Management System</h4>
@@ -918,7 +983,34 @@
             </div>
         </div>
 
-     
+    </div>
+
+</section>
+    <!-- Project Videos Section -->
+<section class="videos" id="videos">
+    <h2 class="heading">Project <span>Videos</span></h2>
+    
+    <div class="videos-container">
+        <!-- Video 1 -->
+        <div class="video-box">
+            <a href="https://www.linkedin.com/posts/aminul-jovan_springboot-springsecurity-backenddevelopment-activity-7292848948132618240-PFq3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
+                <div class="video-icon">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+                <h3>Spring Boot Security Project</h3>
+            </a>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="video-box">
+            <a href="https://www.linkedin.com/posts/aminul-jovan_mindgenix-ailearning-edtech-activity-7314524351658184704-IPHj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
+                <div class="video-icon">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+                <h3>MindGenix AI Platform</h3>
+            </a>
+        </div>
+    </div>
 </section>
 
     <!-- Achievements Section -->
@@ -932,6 +1024,12 @@
                 <p>HackerRank certified Java developer with advanced problem-solving skills.</p>
                 <a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn">View</a>
             </div>
+            <div class="achievement-box">
+    <i class='bx bx-certification'></i>
+    <h3>REST API Certification</h3>
+    <p>HackerRank certified for REST API development skills.</p>
+    <a href="https://www.hackerrank.com/certificates/iframe/77181870b699" class="btn">View Certificate</a>
+</div>
             
             <div class="achievement-box">
                 <i class='bx bx-certification'></i>
