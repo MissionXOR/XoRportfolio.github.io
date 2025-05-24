@@ -437,6 +437,119 @@
             color: var(--second-bg-color);
         }
 
+        .live-projects {
+        background: var(--second-bg-color);
+        padding: 10rem 9% 2rem;
+    }
+    
+    .live-projects h2 {
+        text-align: center;
+        font-size: 4.5rem;
+        margin-bottom: 5rem;
+    }
+    
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2rem;
+    }
+    
+    .project-box {
+        background: var(--bg-color);
+        padding: 3rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+        border: .2rem solid var(--bg-color);
+        transition: .5s ease;
+        margin-bottom: 2rem;
+    }
+    
+    .project-box:hover {
+        border-color: var(--main-color);
+        transform: scale(1.02);
+    }
+    
+    .project-box h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-box p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Live Button Styles */
+    .toolbar {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    
+    .btn_live {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 700;
+        position: relative;
+        padding: 1rem 2rem;
+        background: var(--main-color);
+        text-decoration: none;
+        color: var(--second-bg-color);
+        border-radius: 50px;
+        border: 1px solid var(--main-color);
+        box-shadow: 0px 2px 0px darken(var(--main-color), 10%);
+        transition: all 0.2s;
+        font-size: 1.4rem;
+    }
+    
+    .btn_live:hover {
+        transform: translateY(-5px);
+        padding: calc(1rem * 1.2) calc(2rem * 1.2);
+        padding-right: calc(1.8rem * 1.2);
+        background-color: var(--main-color);
+        box-shadow: 0px 5px 10px rgba(0, 238, 255, 0.3);
+    }
+    
+    .btn_live:active {
+        transform: translateY(0px);
+        padding: calc(1rem * 0.95) calc(2rem * 0.95);
+        box-shadow: inset 0px 2px 1px darken(var(--main-color), 10%);
+    }
+    
+    .live-icon {
+        display: inline-block;
+        position: relative;
+        background-color: red;
+        width: 10px;
+        height: 10px;
+        margin-left: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .live-icon:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: live 2s ease-in-out infinite;
+        z-index: -1;
+    }
+    
+    @keyframes live {
+        0% {
+            transform: scale(1, 1);
+        }
+        100% {
+            transform: scale(3.5, 3.5);
+            background-color: rgba(255, 0, 0, 0);
+        }
+    }
+
         /* ===========================contact Section ================================ */
         .contact h2{
             margin-bottom: 3rem;
@@ -1082,16 +1195,62 @@
                 <a href="https://www.hackerrank.com/certificates/a8f24e2c3a38" class="btn">View</a>
             </div>
             
-            <div class="achievement-box">
-                <i class='bx bx-code'></i>
-                <h3>Spring Boot Projects</h3>
-                <p>Live projects demonstrating Spring Boot expertise.</p>
-                <a href="https://jovan-springsecurity.up.railway.app/" class="btn">Project 1</a>
-                <a href="https://productrestapi-jovan.up.railway.app/swagger-ui/index.html" class="btn">Project 2</a>
-            </div>
+        
         </div>
     </section>
-
+<section class="live-projects" id="live-projects">
+    <h2 class="heading">My <span>Live Projects</span></h2>
+    
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-box">
+            <h3>CRUD with Sorting & Pagination</h3>
+            <p>Complete CRUD application with advanced features including sorting, pagination, and form validation.</p>
+            <div class="toolbar">
+                <a href="http://crud-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
+                    View Live
+                    <span class="live-icon"></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-box">
+            <h3>Report Generator</h3>
+            <p>Developed for ACI Godrej Agrovet Pvt. Ltd. to automate report generation processes.</p>
+            <div class="toolbar">
+                <a href="http://aglreport-env.eba-wmxszbp2.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
+                    View Live
+                    <span class="live-icon"></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-box">
+            <h3>MindGenix Platform</h3>
+            <p>AI-powered learning platform developed for ACI Godrej Agrovet Pvt. Ltd.</p>
+            <div class="toolbar">
+                <a href="http://mindgenix-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
+                    View Live
+                    <span class="live-icon"></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-box">
+            <h3>Login & Registration System</h3>
+            <p>Secure authentication system with email verification and account lock features.</p>
+            <div class="toolbar">
+                <a href="http://simpleloginregistration-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
+                    View Live
+                    <span class="live-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- ===================contact section Design============================== -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
