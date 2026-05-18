@@ -1,1271 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMINUL-Portfolio</title>
-    <!-- boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            border: none;
-            outline: none;
-            scroll-behavior: smooth;
-            font-family: 'Poppins',sans-serif;
-        }
-
-        :root{
-            --bg-color:#000000;
-            --second-bg-color:#323946;
-            --text-color:#fff;
-            --main-color:#0ef;
-            --n-color:rgba(119, 171, 173, 0);
-        }
-
-        html{
-            font-size: 62.5%;
-            overflow-x: hidden;
-        }
-
-        body{
-            background: var(--bg-color);
-            color: var(--text-color);
-        }
-
-        section{
-            min-height: 100vh;
-            padding: 10rem 9% 2rem;
-        }
-
-        .header{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 2rem 9%;
-            background: var(--bg-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
-        .header.sticky{
-            border-bottom: .1rem solid rgb(0,0,0,.2);
-        }
-
-        .logo{
-            font-size: 2.5rem;
-            color: var(--text-color);
-            font-weight: 600;
-            cursor: default;
-        }
-
-        .navbar a{
-            font-size: 1.7rem;
-            color: var(--text-color);
-            margin-left: 4rem;
-            transition: .3s;
-        }
-
-        .navbar a:hover,
-        .navbar a.active{
-            color: var(--main-color);
-        }
-
-        #menu-icon{
-            font-size: 3.6rem;
-            color: var(--text-color);
-            display: none;
-        }
-
-        .home{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .home-img img{
-            width: 55vh;
-            height: 70vh;
-            animation: floatImage 4s ease-in-out infinite;
-        }
-        @keyframes floatImage{
-            0%{
-                transform: translateY(0);
-            }
-            50%{
-                transform: translateY(-2.4rem);
-            }
-            100%{
-                transform: translateY(0);
-            }
-        }
-
-        .home-content h3{
-            font-size: 3.2rem;
-            font-weight: 700;
-        }
-        .home-content h2:nth-of-type(2){
-            margin-bottom: 2rem;
-        }
-
-        span{
-            color: var(--main-color);
-        }
-
-        .home-content h1{
-            font-size: 5.6rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        .home-content p{
-            font-size: 1.6rem;
-        }
-        .social-media a{
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 4rem;
-            height: 4rem;
-            background: transparent;
-            border: .2rem solid var(--main-color);
-            border-radius: 50%;
-            font-size: 2rem;
-            color: var(--main-color);
-            margin: 3rem 1.5rem 3rem 0;
-            transition: .5s ease;
-        }
-
-        .social-media a:hover{
-            background: var(--main-color);
-            color: var(--second-bg-color);
-            box-shadow: 0 0 1rem var(--main-color);
-        }
-
-        .btn{
-            display: inline-block;
-            padding: 1rem 2.8rem;
-            background: var(--main-color);
-            border-radius: 4rem;
-            box-shadow: 0 0 1rem var(--main-color);
-            font-size: 1.6rem;
-            color: var(--second-bg-color);
-            letter-spacing: .1rem;
-            font-weight: 600;
-            transition: .5s ease;
-        }
-
-        .btn:hover{
-            box-shadow: none;
-        }
-
-        .about{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            background: var(--bg-color);
-        }
-        .about-img img{
-            width: 35vh; 
-        }
-        .heading{
-            text-align: center;
-            font-size: 4.5rem;
-        }
-        .about-content h1{
-            text-align: left;
-            line-height: 1.2;
-        }
-        .about-content h3{
-            font-size: 2.6rem;
-        }
-        .about-content p{
-            font-size: 1.6rem;
-            margin: 2rem 0 3rem;
-        }
-        /* Videos Section */
-.videos {
-    background: var(--bg-color);
-    padding: 10rem 9% 2rem;
-}
-
-.videos h2 {
-    text-align: center;
-    font-size: 4.5rem;
-    margin-bottom: 5rem;
-}
-
-.videos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2rem;
-}
-
-.video-box {
-    background: var(--second-bg-color);
-    padding: 3rem 2rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: .2rem solid var(--bg-color);
-    transition: .5s ease;
-    height: 100%;
-}
-
-.video-box:hover {
-    border-color: var(--main-color);
-    transform: scale(1.02);
-}
-
-.video-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.video-icon {
-    font-size: 6rem;
-    color: var(--main-color);
-    margin-bottom: 1.5rem;
-    transition: .3s ease;
-}
-
-.video-box:hover .video-icon {
-    transform: scale(1.1);
-}
-
-.video-box h3 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
-
-        /* Education Section */
-        .education {
-            background: var(--second-bg-color);
-        }
-        
-        .education h2 {
-            margin-bottom: 5rem;
-        }
-        
-        .education-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        .education-box {
-            background: var(--bg-color);
-            border-radius: 2rem;
-            padding: 3rem 2rem 4rem;
-            text-align: center;
-            border: .2rem solid var(--bg-color);
-            transition: .5s ease;
-        }
-        
-        .education-box:hover {
-            border-color: var(--main-color);
-            transform: scale(1.02);
-        }
-        
-        .education-box i {
-            font-size: 7rem;
-            color: var(--main-color);
-            margin-bottom: 1rem;
-        }
-        
-        .education-box h3 {
-            font-size: 2.6rem;
-        }
-        
-        .education-box p {
-            font-size: 1.6rem;
-            margin: 1rem 0 3rem;
-        }
-        
-        .education-box .btn {
-            display: inline-block;
-            padding: 1rem 2.8rem;
-            background: var(--main-color);
-            border-radius: 4rem;
-            box-shadow: 0 0 1rem var(--main-color);
-            font-size: 1.6rem;
-            color: var(--second-bg-color);
-            letter-spacing: .1rem;
-            font-weight: 600;
-            transition: .5s ease;
-        }
-        
-        .education-box .btn:hover {
-            box-shadow: none;
-        }
-
-        .services h2{
-            margin-bottom: 5rem;
-        }
-        .services-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .services-container .services-box{
-            flex: 1 1 30rem;
-            background: var(--second-bg-color);
-            padding: 3rem 2rem 4rem;
-            border-radius: 2rem;
-            text-align: center;
-            border: .6rem solid var(--bg-color);
-            transition: .5s ease;
-        }
-
-        .services-container .services-box:hover{
-            border-color: var(--main-color);
-            transform: scale(1.02);
-        }
-
-        .services-box i{
-            font-size: 7rem;
-            color: var(--main-color);
-        }
-        .services-box h3{
-            font-size: 2.6rem;
-        }
-        .services-box p{
-            font-size: 1.6rem;
-            margin: 1rem 0 3rem;
-        }
-    .portfolio-layer .project-tools {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.portfolio-layer .project-tools span {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    color: var(--main-color);
-}
-        /* ---------------------portfolio Section----------------------------------------- */
-
-        .portfolio{
-            background: var(--second-bg-color);
-        }
-
-        .portfolio h2{
-            margin-bottom: 4rem;
-        }
-        .portfolio-container{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            align-items: center;
-            gap: 2.5rem;
-        }
-        .portfolio-container .portfolio-box{
-            position: relative;
-            border-radius: 6rem;
-            box-shadow: 0 0 1rem var(--bg-color);
-            overflow: hidden;
-            display: flex;
-            border-color: solid rgb(0, 187, 255);
-        }
-        .portfolio-box img{
-            width: 100%;
-            transition: .5s ease;
-        }
-
-        .portfolio-box:hover img{
-            transform: scale(1.1);
-        }
-
-        .portfolio-box .portfolio-layer{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgb(35, 33, 33), var(--main-color));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 0 4rem;
-            transform: translateY(100%);
-            transition: .5s ease;
-        }
-
-        .portfolio-box:hover .portfolio-layer{
-            transform: translateY(0);
-        }
-
-        .portfolio-layer h4{
-            font-size: 3rem;
-        }
-
-        .portfolio-layer p{
-            font-size: 1.6rem;
-            margin: .3rem 0 1rem;
-        }
-
-        .portfolio-layer a{
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 5rem;
-            height: 5rem;
-            background: var(--text-color);
-            border-radius: 50%;
-        }
-        .portfolio-layer a i{
-            font-size: 2rem;
-            color: var(--second-bg-color);
-        }
-
-        .live-projects {
-        background: var(--second-bg-color);
-        padding: 10rem 9% 2rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Md. Aminul Islam · Distinctive Portfolio</title>
+  <!-- Google Fonts: elegant + modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
-    .live-projects h2 {
-        text-align: center;
-        font-size: 4.5rem;
-        margin-bottom: 5rem;
+
+    :root {
+      --deep-blue: #0b2b3b;
+      --teal: #0f766e;
+      --coral: #e07a5f;
+      --soft-gold: #f2cc8f;
+      --bg-cream: #fef9f2;
+      --white: #ffffff;
+      --gray-light: #f0ebe3;
+      --text-dark: #1e1e1e;
+      --text-soft: #4b4b4b;
+      --border-soft: #e7dfd4;
+      --shadow-card: 0 20px 35px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.03);
+      --shadow-hover: 0 28px 45px rgba(0,0,0,0.08);
+      --radius-3xl: 2.5rem;
+      --radius-2xl: 1.8rem;
+      --radius-xl: 1.2rem;
     }
-    
-    .projects-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        gap: 2rem;
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 62.5%;
     }
-    
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.5;
+      letter-spacing: -0.2px;
+    }
+
+    section {
+      padding: 7rem 2.2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(254, 249, 242, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+      z-index: 100;
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 2.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--deep-blue), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .navbar a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.25s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--teal);
+      border-bottom-color: var(--coral);
+    }
+
+    #menu-icon {
+      font-size: 3.2rem;
+      color: var(--deep-blue);
+      display: none;
+      cursor: pointer;
+    }
+
+    /* home */
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      min-height: 100vh;
+      padding-top: 9rem;
+    }
+
+    .home-content h3 {
+      font-size: 2rem;
+      color: var(--text-soft);
+    }
+    .home-content h1 {
+      font-size: 5.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #0b2b3b, #0f766e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0.5rem 0 1rem;
+    }
+    .multiple-text {
+      color: var(--coral);
+      font-weight: 700;
+    }
+    .home-content p {
+      font-size: 1.6rem;
+      color: var(--text-soft);
+      max-width: 500px;
+      margin: 2rem 0;
+    }
+    .social-media {
+      display: flex;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+    .social-media a {
+      width: 4.2rem;
+      height: 4.2rem;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--deep-blue);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+      transition: 0.3s;
+      border: 1px solid var(--border-soft);
+    }
+    .social-media a:hover {
+      background: var(--coral);
+      color: white;
+      border-color: var(--coral);
+      transform: translateY(-4px);
+    }
+    .btn {
+      background: var(--teal);
+      color: white;
+      padding: 1.2rem 2.8rem;
+      border-radius: 4rem;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 18px rgba(15, 118, 110, 0.25);
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: var(--deep-blue);
+      box-shadow: 0 16px 26px rgba(11, 43, 59, 0.3);
+    }
+    .home-img img {
+      width: 36rem;
+      max-width: 85vw;
+      border-radius: 3rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .heading {
+      font-size: 4.2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .heading span {
+      color: var(--coral);
+      background: linear-gradient(to right, #e07a5f, #f2cc8f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2.8rem 2rem;
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-card);
+      transition: 0.25s ease;
+      border: 1px solid var(--border-soft);
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--coral);
+    }
+    .card i {
+      font-size: 3.8rem;
+      color: var(--coral);
+      margin-bottom: 1.4rem;
+    }
+    .card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0.8rem 0;
+    }
+    .card p {
+      font-size: 1.4rem;
+      color: var(--text-soft);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fce9e2;
+      color: #b04e3a;
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0.3rem;
+    }
+
+    .experience-img {
+      height: 55px;
+      margin-bottom: 1rem;
+    }
+
     .project-box {
-        background: var(--bg-color);
-        padding: 3rem 2rem;
-        border-radius: 2rem;
-        text-align: center;
-        border: .2rem solid var(--bg-color);
-        transition: .5s ease;
-        margin-bottom: 2rem;
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-card);
+      text-align: center;
     }
-    
-    .project-box:hover {
-        border-color: var(--main-color);
-        transform: scale(1.02);
-    }
-    
-    .project-box h3 {
-        font-size: 2.2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .project-box p {
-        font-size: 1.4rem;
-        margin-bottom: 2rem;
-    }
-    
-    /* Live Button Styles */
-    .toolbar {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-    
     .btn_live {
-        display: inline-flex;
-        align-items: center;
-        font-weight: 700;
-        position: relative;
-        padding: 1rem 2rem;
-        background: var(--main-color);
-        text-decoration: none;
-        color: var(--second-bg-color);
-        border-radius: 50px;
-        border: 1px solid var(--main-color);
-        box-shadow: 0px 2px 0px darken(var(--main-color), 10%);
-        transition: all 0.2s;
-        font-size: 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      margin-top: 1.4rem;
+      transition: 0.3s;
     }
-    
     .btn_live:hover {
-        transform: translateY(-5px);
-        padding: calc(1rem * 1.2) calc(2rem * 1.2);
-        padding-right: calc(1.8rem * 1.2);
-        background-color: var(--main-color);
-        box-shadow: 0px 5px 10px rgba(0, 238, 255, 0.3);
+      background: var(--teal);
+      color: white;
     }
-    
-    .btn_live:active {
-        transform: translateY(0px);
-        padding: calc(1rem * 0.95) calc(2rem * 0.95);
-        box-shadow: inset 0px 2px 1px darken(var(--main-color), 10%);
-    }
-    
     .live-icon {
-        display: inline-block;
-        position: relative;
-        background-color: red;
-        width: 10px;
-        height: 10px;
-        margin-left: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 50%;
-        z-index: 1;
+      width: 10px;
+      height: 10px;
+      background: #c93c3c;
+      border-radius: 50%;
+      position: relative;
     }
-    
-    .live-icon:before {
-        content: "";
-        display: block;
+    .live-icon::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(201, 60, 60, 0.5);
+      border-radius: 50%;
+      animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(3.4); opacity: 0; }
+    }
+
+    .contact-card {
+      background: var(--white);
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 4rem;
+      border-radius: var(--radius-3xl);
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.7rem;
+      background: #f8f4ed;
+      padding: 1rem 2rem;
+      border-radius: 3rem;
+      margin: 1rem 0;
+      justify-content: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-soft);
+      border-top: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 768px) {
+      #menu-icon { display: block; }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: white;
         position: absolute;
-        background-color: rgba(255, 0, 0, 0.6);
+        top: 100%;
+        left: 0;
         width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        animation: live 2s ease-in-out infinite;
-        z-index: -1;
+        padding: 2rem;
+      }
+      .navbar.active { display: flex; }
     }
-    
-    @keyframes live {
-        0% {
-            transform: scale(1, 1);
-        }
-        100% {
-            transform: scale(3.5, 3.5);
-            background-color: rgba(255, 0, 0, 0);
-        }
-    }
-
-        /* ===========================contact Section ================================ */
-        .contact h2{
-            margin-bottom: 3rem;
-        }
-        .contact form{
-            max-width: 70rem;
-            margin: 1rem auto;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .contact form .input-box{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .contact form .input-box input,
-        .contact form textarea{
-            width: 100%;
-            padding: 1.5rem;
-            font-size: 1.6rem;
-            color: var(--text-color);
-            background: var(--second-bg-color);
-            border-radius: .8rem;
-            margin: .7rem 0;
-        }
-
-        .contact form .input-box input{
-            width: 49%;
-        }
-        .contact form textarea{
-            resize: none;
-        }
-        .contact form .btn{
-            margin-top: 2rem;
-            cursor: pointer;
-        }
-
-        /* =========================footer design =========================== */
-        .footer{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 2rem 9%;
-            background: var(--second-bg-color);
-        }
-        .footer-text p{
-            font-size: 1.6rem;
-        }
-        .footer-iconTop a{
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: .8rem;
-            background: var(--main-color);
-            border-radius: .8rem;
-            transition: .5s ease;
-        }
-
-        .footer-iconTop a:hover{
-            box-shadow: 0 0 1rem var(--main-color);
-        }
-        .footer-iconTop a i{
-            font-size: 2.4rem;
-            color: var(--second-bg-color);
-        }
-
-        /* ========================breakpoints===================================== */
-        @media(max-width: 1200px){
-            html{
-                font-size: 55%;
-            }
-        }
-
-        @media(max-width: 991px){
-            .header{
-                padding: 2rem 3%;
-            }
-            section{
-                padding:10rem 3% 2rem  ;
-            }
-            .services{
-                padding: 10rem 3% 2rem;
-            }
-            .portfolio{
-                padding-bottom: 7rem;
-            }
-            .contact{
-                min-height: auto;
-            }
-            .fotter{
-                padding: 2rem 3%;
-            }
-            .education-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media(max-width: 768px){
-            #menu-icon{
-                display: block;
-            }
-            .navbar{
-                position: absolute;
-                top:100%;
-                left: 0;
-                width: 100%;
-                padding: 1rem 3%;
-                background: var(--bg-color);
-                border-top: .1rem solid rgb(0,0,0,.2);
-                box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
-                display: none;
-
-            }
-
-            .navbar.active{
-                display: block;
-            }
-            .navbar a{
-                display: block;
-                font-size: 2rem;
-                margin: 3rem 0;
-            }
-            .home{
-                flex-direction: column;
-            }
-            .home-content h3{
-                font-size: 2.6rem;
-            }
-            .home-content h1{
-                font-size: 5rem;
-            }
-            .home-img img{
-                width: 70vw;
-                margin-top: 4rem;
-            }
-            .about{
-                flex-direction: column-reverse;
-            }
-            .about img{
-                width: 70vw;
-                margin-top: 4rem;
-            }
-            .services h2{
-                margin-bottom: 3rem;
-            }
-            .portfolio h2{
-                margin-bottom: 3rem;
-            }
-            .portfolio-container{
-                grid-template-columns: repeat(2,1fr);
-            }
-            .education-container {
-                grid-template-columns: 1fr;
-            }
-
-        }
-        @media(max-width: 617px){
-            .portfolio-container{
-                grid-template-columns: 1fr;
-            }
-        }
-        @media(max-width: 450px){
-            html{
-                font-size: 50%;
-            }
-            .contact form .input-box input{
-                width: 100%;
-            }
-        }
-        @media(max-width: 365px){
-            .home-img img{
-                width: 90vw;
-            }
-            .about-img img{
-                width: 90vw;
-            }
-            .footer{
-                flex-direction: column-reverse;
-            }
-            .footer p{
-                text-align: center;
-                margin-top: 2rem;
-            }
-        }
-
-        /* Experience Section */
-        .experience {
-            background: var(--bg-color);
-            padding: 10rem 9% 2rem;
-        }
-        
-        .experience h2 {
-            text-align: center;
-            font-size: 4.5rem;
-            margin-bottom: 5rem;
-        }
-        
-        .experience-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .experience-box {
-            flex: 1 1 30rem;
-            background: var(--second-bg-color);
-            padding: 3rem 2rem 4rem;
-            border-radius: 2rem;
-            text-align: center;
-            border: .2rem solid var(--bg-color);
-            transition: .5s ease;
-        }
-        
-        .experience-box:hover {
-            border-color: var(--main-color);
-            transform: scale(1.02);
-        }
-        
-        .experience-box i {
-            font-size: 5rem;
-            color: var(--main-color);
-            margin-bottom: 1rem;
-        }
-        
-        .experience-box h3 {
-            font-size: 2.6rem;
-            margin-bottom: 1rem;
-        }
-        
-        .experience-box p {
-            font-size: 1.6rem;
-            margin: 1rem 0;
-        }
-        
-        .experience-box .date {
-            font-size: 1.4rem;
-            color: var(--main-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .experience-box .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .experience-box .skills span {
-            background: var(--bg-color);
-            color: var(--main-color);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Achievements Section */
-        .achievements {
-            background: var(--second-bg-color);
-            padding: 10rem 9% 2rem;
-        }
-        
-        .achievements h2 {
-            text-align: center;
-            font-size: 4.5rem;
-            margin-bottom: 5rem;
-        }
-        
-        .achievements-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-            gap: 2rem;
-        }
-        
-        .achievement-box {
-            background: var(--bg-color);
-            padding: 3rem 2rem;
-            border-radius: 2rem;
-            text-align: center;
-            border: .2rem solid var(--bg-color);
-            transition: .5s ease;
-        }
-        
-        .achievement-box:hover {
-            border-color: var(--main-color);
-            transform: scale(1.02);
-        }
-        
-        .achievement-box i {
-            font-size: 5rem;
-            color: var(--main-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .achievement-box h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .achievement-box p {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .achievement-box .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--main-color);
-            border-radius: 4rem;
-            font-size: 1.4rem;
-            color: var(--second-bg-color);
-            transition: .5s ease;
-        }
-        
-        .achievement-box .btn:hover {
-            box-shadow: 0 0 1rem var(--main-color);
-        }
-    </style>
+  </style>
 </head>
-
 <body>
-    <!------------------------------------ header design --------------------------------------->
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
+  <header class="header">
+    <a href="#" class="logo">Aminul.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Skills</a>
+      <a href="#live-projects">Projects</a>
+      <a href="#videos">Videos</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#awarded">Awarded</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#services">Skills</a>
-            <a href="#live-projects">Projects</a>
-             <a href="#videos">Project Videos</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!--------------------------------------- home section design -------------------------------------------->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello It's Me</h3>
-            <h1>MD. Aminul Islam</h1>
-            <h3>And I'm a <span class="multiple-text"> </span></h3>
-            <p>Passionate Web Developer with expertise in backend development using the Spring Boot framework and
- Hibernate for seamless database integration. Strong proficiency in Java, my preferred programming
- language. Skilled in frontend technologies, including HTML, CSS, and Thymeleaf, to create dynamic and
- user-friendly interfaces. Experienced in database management using MySQL, ensuring robust and efficient
- data handling. Committed to delivering high-quality, scalable, and maintainable web solutions.
-                
-            </p>
-            <div class="social-media">
-                <a href="https://www.facebook.com/jovanifte.aminul"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.youtube.com/channel/UC36d0ucKf6-2GhJMqhCv6Tg"><i class='bx bxl-youtube'></i></a>
-                <a href="www.linkedin.com/in/aminul-jovan"><i class='bx bxl-linkedin' ></i></a>
-                <a href="https://github.com/MissionXOR"><i class='bx bxl-github' ></i></a>
-            </div>
-            <a href="" class="btn">Download Resume</a>
-        </div>
-        <div class="home-img">
-            <img src="me.png" alt="Profile Image">
-        </div>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VwZzNqZ2N2bG1mZ2Z5bXh0bWx3bW5zZ2J3eGZ4eGx0bW5yYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding GIF" width="200px">
-    </section>
-
-    <!-- -----------------------------------about section design-------------------------------- -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="1.jpg" alt="About Image">
-        </div>
-        <div class="about-content">
-            <h1 class="heading">About <span>Me</span></h1>
-            <h3><span>Hi I'm Md. Aminul Islam. </span></h3>
-            <h3>I'm a</h3>
-            <h3><span>Software Developer</span> | <span>Web Developer</span> |  <span>JAVA Expert</span> </h3>
-            <p>
-               I am a computer science graduate with expertise in Java programming and full-stack development. 
-                I'm passionate about creating efficient software solutions and have experience with web frameworks Spring Boot. 
-                My problem-solving skills and competitive programming background help me tackle complex challenges effectively.
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <h2 class="heading">My <span>Education</span></h2>
-        
-        <div class="education-container">
-            <div class="education-box">
-                <i class='bx bxs-graduation'></i>
-                <h3>Bachelor of Science</h3>
-                <p>Computer Science and Engineering</p>
-                <p>Bangladesh University of Business and Technology (BUBT)</p>
-                <p>2020-2024 | CGPA: 3.66/4.00</p>
-                <p>Major in Software Engineering</p>
-            </div>
-            
-            <div class="education-box">
-                <i class='bx bxs-school'></i>
-                <h3>Higher Secondary</h3>
-                <p>Science Group</p>
-                <p>Monipur Uchcha Vidyalaya & College</p>
-                <p>2019 | GPA: 4.50/5.00</p>
-            </div>
-            
-            <div class="education-box">
-                <i class='bx bxs-school'></i>
-                <h3>Secondary School</h3>
-                <p>Science Group</p>
-                <p>Chakhar Fazlul Huq Institution</p>
-                <p>2017 | GPA: 4.77/5.00</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-<section class="experience" id="experience">
-    <h2 class="heading">My <span>Experience</span></h2>
-    
-    <div class="experience-container">
-        <div class="experience-box">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                <img src="ac.jpeg" alt="ACI Godrej Agrovet" style="max-height: 80px; max-width: 100%;">
-            </div>
-            <i class='bx bx-code-alt'></i>
-            <h3>Software Developer & IT Intern</h3>
-            <p>ACI Godrej Agrovet Pvt. Ltd.</p>
-            <p class="date">Feb-2025 to June-2025 (4 months)</p>
-            <p>Completed internship in IT and Software Development department, working on real-world projects and gaining hands-on experience with enterprise systems.</p>
-            <div class="skills">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>MySQL</span>
-                <span>System Design</span>
-            </div>
-        </div>
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, I'm</h3>
+      <h1>Md. Aminul Islam</h1>
+      <h3><span class="multiple-text"></span></h3>
+      <p>Software developer & international client manager. I blend Java mastery with global communication.</p>
+      <div class="social-media">
+        <a href="https://www.facebook.com/jovanifte.aminul"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.youtube.com/channel/UC36d0ucKf6-2GhJMqhCv6Tg"><i class='bx bxl-youtube'></i></a>
+        <a href="https://www.linkedin.com/in/aminul-jovan"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/MissionXOR"><i class='bx bxl-github'></i></a>
+      </div>
+      <a href="#" class="btn">Download Resume</a>
     </div>
-</section>
-
-    <!-- -------------------services Design (Skills)------------------------------->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Skills</span></h2>
-
-         <div class="services-container">
-            <div class="services-box">
-                <i class='bx bxl-java' ></i>
-                <h3>JAVA</h3>
-                <p>Expert in Java programming with experience in Spring Boot, Hibernate, and competitive programming using Java.</p>
-                <a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn">View Certificate</a>
-            </div>
-
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Backend Development</h3>
-                <p>Spring Boot, Hibernate, Mysql, REST APIS, Microservices architecture.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-        
-            <div class="services-box">
-                <i class='bx bx-code-curly'></i>
-                <h3>Frontend Development</h3>
-                <p>HTML, CSS, JavaScript, Thymeleaf, Responsive Design.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>    
-
-        </div>
-    </section>
-<!-- ------------------portfolio Section (Projects)--------------------------------- -->
-<section class="live-projects" id="live-projects">
-    <h2 class="heading">My <span>Live Projects</span></h2>
-    
-    <div class="projects-container">
-        <!-- Project 1 -->
-        <div class="project-box">
-            <h3>CRUD with Sorting & Pagination</h3>
-            <p>Complete CRUD application with advanced features including sorting, pagination, and form validation.</p>
-            <div class="toolbar">
-                <a href="http://crud-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
-                    View Live
-                    <span class="live-icon"></span>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="project-box">
-            <h3>Report Generator</h3>
-            <p>Developed for ACI Godrej Agrovet Pvt. Ltd. to automate report generation processes.</p>
-            <div class="toolbar">
-                <a href="http://aglreport-env.eba-wmxszbp2.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
-                    View Live
-                    <span class="live-icon"></span>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="project-box">
-            <h3>MindGenix Platform</h3>
-            <p>AI-powered learning platform developed for ACI Godrej Agrovet Pvt. Ltd.</p>
-            <div class="toolbar">
-                <a href="http://mindgenix-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
-                    View Live
-                    <span class="live-icon"></span>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="project-box">
-            <h3>Login & Registration System</h3>
-            <p>Secure authentication system with email verification and account lock features.</p>
-            <div class="toolbar">
-                <a href="http://simpleloginregistration-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">
-                    View Live
-                    <span class="live-icon"></span>
-                </a>
-            </div>
-        </div>
+    <div class="home-img">
+      <img src="me.png" alt="Aminul" />
     </div>
-</section>
-    <!-- Project Videos Section -->
-<section class="videos" id="videos">
-    <h2 class="heading">Project <span>Videos</span></h2>
-    
-    <div class="videos-container">
-        <!-- Video 1 -->
-        <div class="video-box">
-            <a href="https://www.linkedin.com/posts/aminul-jovan_springboot-springsecurity-backenddevelopment-activity-7292848948132618240-PFq3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
-                <div class="video-icon">
-                    <i class='bx bx-play-circle'></i>
-                </div>
-                <h3>Spring Boot Security Project</h3>
-            </a>
-        </div>
+  </section>
 
-          <div class="video-box">
-            <a href="https://www.linkedin.com/posts/aminul-jovan_legaltech-java-automation-activity-7325168891087769602-yy12?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
-                <div class="video-icon">
-                    <i class='bx bx-play-circle'></i>
-                </div>
-                <h3> DocuLaw Analyzer</h3>
-            </a>
-        </div>
-        
-        
-        <!-- Video 2 -->
-        <div class="video-box">
-            <a href="https://www.linkedin.com/posts/aminul-jovan_mindgenix-ailearning-edtech-activity-7314524351658184704-IPHj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
-                <div class="video-icon">
-                    <i class='bx bx-play-circle'></i>
-                </div>
-                <h3>MindGenix AI Platform</h3>
-            </a>
-        </div>
-
-                  <div class="video-box">
-            <a href="https://www.linkedin.com/posts/aminul-jovan_springboot-java-jwt-activity-7325172304030695425-nQim?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3sOesBEzUdXwkWYT9jF7xySAZhSjhY4Kg" target="_blank" class="video-link">
-                <div class="video-icon">
-                    <i class='bx bx-play-circle'></i>
-                </div>
-                <h3>JWT Authentication</h3>
-            </a>
-        </div>
-        
+  <section id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+    <div style="display:flex; flex-wrap:wrap; gap:3rem; align-items:center;">
+      <img src="1.jpg" alt="about" style="width:250px; border-radius:2rem;" />
+      <div style="flex:1;">
+        <h3 style="font-size:2.2rem;">Java Expert · Full Stack · Client Manager</h3>
+        <p style="font-size:1.5rem; margin-top:1rem;">Computer Science graduate with a knack for Spring Boot, Hibernate, and managing international tech clients. I turn complex ideas into polished digital products.</p>
+        <a href="#" class="btn" style="margin-top:1.5rem;">Read More</a>
+      </div>
     </div>
-</section>
+  </section>
 
-    <!-- Achievements Section -->
-    <section class="achievements" id="achievements">
-        <h2 class="heading">My <span>Achievements</span></h2>
-        
-        <div class="achievements-container">
-            <div class="achievement-box">
-                <i class='bx bx-certification'></i>
-                <h3>Java Certification</h3>
-                <p>HackerRank certified Java developer with advanced problem-solving skills.</p>
-                <a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn">View</a>
-            </div>
-            <div class="achievement-box">
-    <i class='bx bx-certification'></i>
-    <h3>REST API Certification</h3>
-    <p>HackerRank certified for REST API development skills.</p>
-    <a href="https://www.hackerrank.com/certificates/iframe/77181870b699" class="btn">View</a>
-</div>
-            
-            <div class="achievement-box">
-                <i class='bx bx-certification'></i>
-                <h3>Software Engineer Intern</h3>
-                <p>Certified for completing Software Engineer Intern at HackerRank</p>
-                <a href="https://www.hackerrank.com/certificates/f20fe67a6946" class="btn">View</a>
-            </div>
-            
-            <div class="achievement-box">
-                <i class='bx bx-trophy'></i>
-                <h3>BEC ROBO MANIA 2022</h3>
-                <p>Participated and showcased skills in robotics competition.</p>
-                <a href="https://drive.google.com/file/d/1Mq3mRFLi1LLsmmBSP1Rb7nI5gW2Jgmug/view" class="btn">View</a>
-            </div>
-            
-            <div class="achievement-box">
-                <i class='bx bx-trophy'></i>
-                <h3>IUBAT Techathon 2024</h3>
-                <p>Champion in university-level tech competition.</p>
-                <a href="#" class="btn">View</a>
-            </div>
-            
-            <div class="achievement-box">
-                <i class='bx bx-certification'></i>
-                <h3>Python Certification</h3>
-                <p>HackerRank certified Python programmer.</p>
-                <a href="https://www.hackerrank.com/certificates/a8f24e2c3a38" class="btn">View</a>
-            </div>
-            
-        
-        </div>
-    </section>
+  <section id="education">
+    <h2 class="heading">Education</h2>
+    <div class="grid">
+      <div class="card"><i class='bx bxs-graduation'></i><h3>B.Sc. CSE</h3><p>BUBT (2020-2024)</p><p>CGPA 3.66</p></div>
+      <div class="card"><i class='bx bxs-school'></i><h3>HSC</h3><p>Monipur College (2019)</p><p>GPA 4.50</p></div>
+      <div class="card"><i class='bx bxs-school'></i><h3>SSC</h3><p>Chakhar Fazlul Huq (2017)</p><p>GPA 4.77</p></div>
+    </div>
+  </section>
 
-    <!-- ===================contact section Design============================== -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
+  <section id="experience">
+    <h2 class="heading">Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="ac.jpeg" alt="ACI" class="experience-img" />
+        <h3>Software Developer & IT Intern</h3>
+        <p>ACI Godrej Agrovet (Feb-June 2025)</p>
+        <div><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span></div>
+      </div>
+      <div class="card">
+        <i class='bx bx-globe' style="font-size:3.5rem; color:#0f766e;"></i>
+        <h3>International Clients Management Executive</h3>
+        <p>Tech Maximus</p>
+        <p style="font-weight:500;">Global client coordination & tech solutions</p>
+        <div><span class="tag">Client Relations</span><span class="tag">International</span></div>
+      </div>
+    </div>
+  </section>
 
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="E-mail Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="E-mail Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn" >
-        </form>
-    </section>
+  <section id="services">
+    <h2 class="heading">Skills</h2>
+    <div class="grid">
+      <div class="card"><i class='bx bxl-java'></i><h3>Java</h3><p>Spring Boot, Hibernate</p><a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn_live">Certificate</a></div>
+      <div class="card"><i class='bx bx-code-alt'></i><h3>Backend</h3><p>REST APIs, Microservices</p></div>
+      <div class="card"><i class='bx bx-code-curly'></i><h3>Frontend</h3><p>HTML, CSS, Thymeleaf</p></div>
+    </div>
+  </section>
 
-    <!-- -----------------footer Design----------------------------- -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2023 by X-OR | All Rights Reserved.</p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
+  <section id="live-projects">
+    <h2 class="heading">Live Projects</h2>
+    <div class="grid">
+      <div class="project-box"><h3>CRUD + Pagination</h3><a href="http://crud-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">Live <span class="live-icon"></span></a></div>
+      <div class="project-box"><h3>Report Generator</h3><a href="http://aglreport-env.eba-wmxszbp2.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">Live <span class="live-icon"></span></a></div>
+      <div class="project-box"><h3>MindGenix AI</h3><a href="http://mindgenix-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">Live <span class="live-icon"></span></a></div>
+      <div class="project-box"><h3>Login System</h3><a href="http://simpleloginregistration-aminul.eu-north-1.elasticbeanstalk.com/" class="btn_live" target="_blank">Live <span class="live-icon"></span></a></div>
+    </div>
+  </section>
 
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+  <section id="videos">
+    <h2 class="heading">Project Videos</h2>
+    <div class="grid">
+      <div class="card"><a href="https://www.linkedin.com/posts/aminul-jovan_springboot-springsecurity-backenddevelopment-activity-7292848948132618240-PFq3" target="_blank"><i class='bx bx-play-circle'></i><h3>Spring Security</h3></a></div>
+      <div class="card"><a href="https://www.linkedin.com/posts/aminul-jovan_legaltech-java-automation-activity-7325168891087769602-yy12" target="_blank"><i class='bx bx-play-circle'></i><h3>DocuLaw</h3></a></div>
+      <div class="card"><a href="https://www.linkedin.com/posts/aminul-jovan_mindgenix-ailearning-edtech-activity-7314524351658184704-IPHj" target="_blank"><i class='bx bx-play-circle'></i><h3>MindGenix</h3></a></div>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <section id="achievements">
+    <h2 class="heading">Achievements</h2>
+    <div class="grid">
+      <div class="card"><i class='bx bx-certification'></i><h3>Java Certified</h3><a href="https://www.hackerrank.com/certificates/e781829e5e29" class="btn_live">View</a></div>
+      <div class="card"><i class='bx bx-certification'></i><h3>REST API</h3><a href="https://www.hackerrank.com/certificates/iframe/77181870b699" class="btn_live">View</a></div>
+      <div class="card"><i class='bx bx-trophy'></i><h3>BEC ROBO MANIA</h3></div>
+      <div class="card"><i class='bx bx-trophy'></i><h3>IUBAT Techathon</h3></div>
+    </div>
+  </section>
 
-    <script>
-        // Toggle Icon NavBar
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
+  <!-- NEW AWARDED SECTION -->
+  <section id="awarded">
+    <h2 class="heading"><span>Awarded</span> Scholarship</h2>
+    <div style="max-width:700px; margin:0 auto;">
+      <div class="card" style="background: linear-gradient(135deg, #fef9f2, #fff7ed); border-left: 6px solid var(--coral);">
+        <i class='bx bxs-graduation' style="font-size:4.5rem; color:#0f766e;"></i>
+        <h3 style="font-size:2.4rem; margin-top:0.8rem;">Erasmus Mundus Scholarship</h3>
+        <p style="font-size:1.8rem; font-weight:600; color:var(--deep-blue);">CyberMacs Program</p>
+        <p style="font-size:1.5rem; margin-top:0.8rem;"><strong>Turkey · North Macedonia · Germany</strong></p>
+        <p style="font-size:1.4rem; color:var(--text-soft);">Awarded the prestigious Erasmus Mundus joint master’s degree scholarship in Cybersecurity and Management.</p>
+        <span class="tag" style="margin-top:1rem;">🌍 International</span>
+      </div>
+    </div>
+  </section>
 
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('bx-x');
-            navbar.classList.toggle('active');
-        };
+  <section id="contact">
+    <h2 class="heading">Contact</h2>
+    <div class="contact-card">
+      <div class="contact-item"><i class='bx bx-envelope'></i> aminul.jovan@email.com</div>
+      <div class="contact-item"><i class='bx bxl-linkedin'></i> linkedin.com/in/aminul-jovan</div>
+      <div class="contact-item"><i class='bx bxl-github'></i> github.com/MissionXOR</div>
+      <div style="margin-top:2rem;">
+        <a href="#" class="btn">Say Hello</a>
+      </div>
+    </div>
+  </section>
 
-        // Scroll Section Activated Link
-        let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('header nav a');
-        
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
+  <footer class="footer">
+    <p>© 2025 Md. Aminul Islam – Elegance in code</p>
+  </footer>
 
-                if(top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-                    });
-                };
-            });
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuIcon.classList.toggle('bx-x');
+    });
 
-            // Sticky NavBar
-            let header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-            
-            // Remove toggle icon and navbar when click navbar links (scroll)
-            menuIcon.classList.remove('bx-x');
-            navbar.classList.remove('active');
-        };
+    window.addEventListener('scroll', () => {
+      navbar.classList.remove('active');
+      menuIcon.classList.remove('bx-x');
+    });
 
-        // Scroll Reveal
-        ScrollReveal({
-            distance: '80px',
-            duration: 2000,
-            delay: 200
-        });
-
-        ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-        ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-        ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
-
-        // Typed JS
-        const typed = new Typed('.multiple-text', {
-            strings: ['Competitive Programmer', 'JAVA Expert', 'Web Developer', 'Software Developer'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 1000,
-            loop: true
-        });
-    </script>
+    new Typed('.multiple-text', {
+      strings: ['Java Expert','Spring Boot Developer','International Client Manager','Erasmus Scholar'],
+      typeSpeed: 70,
+      backSpeed: 45,
+      backDelay: 1200,
+      loop: true
+    });
+  </script>
 </body>
 </html>
