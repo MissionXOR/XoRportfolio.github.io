@@ -167,10 +167,12 @@
     }
 
     .home-img img {
-      width: 35vw;
-      height: 80;
+      width: 28vw;
+      max-width: 350px;
+      height: auto;
       border-radius: 30px;
       box-shadow: 0 0 40px rgba(56, 189, 248, 0.25);
+      transition: 0.3s;
     }
 
     .heading {
@@ -183,22 +185,25 @@
 
     .about {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       align-items: center;
-      gap: 4rem;
+      gap: 2rem;
     }
-    .about img {
-      width: 100%;
-      border-radius: 20px;
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
     }
     .about-content h3 {
       color: var(--text-color);
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin: 1.5rem 0;
     }
     .about-content p {
       color: var(--text-secondary);
-      font-size: 1.6rem;
-      margin-top: 2rem;
+      font-size: 1.7rem;
+      margin-top: 1.5rem;
+      text-align: left;
     }
 
     .grid-container {
@@ -321,8 +326,7 @@
     @media(max-width: 991px) {
       html { font-size: 55%; }
       .home { flex-direction: column; text-align: center; }
-      .home-img img { width: 70vw; }
-      .about { grid-template-columns: 1fr; }
+      .home-img img { width: 55vw; }
     }
 
     @media(max-width: 768px) {
@@ -370,20 +374,20 @@
       <h3 data-i18n="greeting">Hello It's Me</h3>
       <h1>MD. Aminul Islam</h1>
       <h3><span class="multiple-text"></span></h3>
-      <p data-i18n="home_desc">Passionate Software Developer with expertise in Java, Spring Boot, and modern web technologies.</p>
+      <p data-i18n="home_desc">Passionate Software Developer with expertise in Java, Spring Boot, and modern web technologies. I specialize in building scalable backend systems and dynamic web applications. Currently exploring cybersecurity through the Erasmus Mundus CyberMACS program.</p>
       <a href="#" class="btn" data-i18n="download_cv">Download Resume</a>
     </div>
     <div class="home-img">
-      <img src="AB.png" alt="Profile">
+      <img src="AB.png" alt="Profile of Aminul Islam">
     </div>
   </section>
 
   <section class="about" id="about">
-    
     <div class="about-content">
       <h2 class="heading"><span data-i18n="about_heading">About</span> <span>Me</span></h2>
-      <h3><span>Software Developer</span> | <span>Java Expert</span></h3>
-      <p data-i18n="about_text">I am a computer science graduate with expertise in Java programming and full-stack development. I build modern applications using Spring Boot and enterprise technologies.</p>
+      <h3><span>Software Developer</span> | <span>Java Expert</span> | <span>Erasmus Mundus Scholar</span></h3>
+      <p data-i18n="about_text">I am Md. Aminul Islam, a dedicated Computer Science graduate from BUBT with a strong foundation in Java and full‑stack development. My journey includes building enterprise applications using Spring Boot, Hibernate, and MySQL. I have hands‑on experience from my internship at ACI Godrej Agrovet, where I developed report generators and AI‑powered learning platforms. Later, at Tech Maximus, I managed international clients and IT coordination. I am currently honored to be an Erasmus Mundus scholar in the CyberMACS program, focusing on applied cybersecurity across Turkey, North Macedonia, and Germany. I am passionate about solving complex problems, writing clean code, and continuously learning new technologies.</p>
+      <a href="#" class="btn" style="margin-top:2rem;">Read More</a>
     </div>
   </section>
 
@@ -431,27 +435,6 @@
       <div class="project-box"><h3>CRUD + Pagination</h3><p>Advanced sorting and form validation</p><a href="#" class="btn">View Live</a></div>
       <div class="project-box"><h3>MindGenix AI Platform</h3><p>AI-powered learning system</p><a href="#" class="btn">View Live</a></div>
       <div class="project-box"><h3>JWT Authentication</h3><p>Secure login with Spring Security</p><a href="#" class="btn">View</a></div>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2 class="heading"><span data-i18n="videos_title">Project</span> <span>Videos</span></h2>
-    <div class="grid-container grid-3">
-      <div class="video-box">
-        <i class='bx bx-play-circle'></i>
-        <h3>Spring Boot Security</h3>
-        <p>Full authentication flow</p>
-      </div>
-      <div class="video-box">
-        <i class='bx bx-play-circle'></i>
-        <h3>MindGenix AI Demo</h3>
-        <p>Platform walkthrough</p>
-      </div>
-      <div class="video-box">
-        <i class='bx bx-play-circle'></i>
-        <h3>DocuLaw Analyzer</h3>
-        <p>Legal document analysis</p>
-      </div>
     </div>
   </section>
 
@@ -536,20 +519,19 @@
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script>
     (function() {
-      // ---------- TRANSLATIONS ----------
       const translations = {
         en: {
           nav_home: "Home", nav_about: "About", nav_education: "Education",
           nav_experience: "Experience", nav_skills: "Skills", nav_projects: "Projects",
           nav_videos: "Videos", nav_awarded: "Awarded", nav_certificates: "Certificates",
           nav_contact: "Contact", greeting: "Hello It's Me",
-          home_desc: "Passionate Software Developer with expertise in Java, Spring Boot, and modern web technologies.",
+          home_desc: "Passionate Software Developer with expertise in Java, Spring Boot, and modern web technologies. I specialize in building scalable backend systems and dynamic web applications. Currently exploring cybersecurity through the Erasmus Mundus CyberMACS program.",
           download_cv: "Download Resume", about_heading: "About",
-          about_text: "I am a computer science graduate with expertise in Java programming and full-stack development. I build modern applications using Spring Boot and enterprise technologies.",
+          about_text: "I am Md. Aminul Islam, a dedicated Computer Science graduate from BUBT with a strong foundation in Java and full‑stack development. My journey includes building enterprise applications using Spring Boot, Hibernate, and MySQL. I have hands‑on experience from my internship at ACI Godrej Agrovet, where I developed report generators and AI‑powered learning platforms. Later, at Tech Maximus, I managed international clients and IT coordination. I am currently honored to be an Erasmus Mundus scholar in the CyberMACS program, focusing on applied cybersecurity across Turkey, North Macedonia, and Germany. I am passionate about solving complex problems, writing clean code, and continuously learning new technologies.",
           education_title: "My", hsc: "Higher Secondary", ssc: "Secondary School",
           experience_title: "My", job1: "Software Developer & IT Intern",
           job2: "International Clients Management Executive", skills_title: "My",
-          projects_title: "My", videos_title: "Project", awarded_title: "Awarded",
+          projects_title: "My", awarded_title: "Awarded",
           awarded_desc: "Fully funded scholarship in Applied Cybersecurity.",
           certificates_title: "Certificates", contact_title: "Contact"
         },
@@ -560,11 +542,11 @@
           nav_contact: "Kontakt", greeting: "Hallo, ich bin's",
           home_desc: "Leidenschaftlicher Softwareentwickler mit Kenntnissen in Java, Spring Boot und modernen Webtechnologien.",
           download_cv: "Lebenslauf", about_heading: "Über",
-          about_text: "Ich bin ein Informatik-Absolvent mit Schwerpunkt auf Java und Full-Stack-Entwicklung.",
+          about_text: "Ich bin Md. Aminul Islam, ein engagierter Informatik-Absolvent mit starkem Hintergrund in Java und Full-Stack.",
           education_title: "Meine", hsc: "Oberstufe", ssc: "Mittelstufe",
           experience_title: "Meine", job1: "Softwareentwickler Praktikant",
           job2: "Internationaler Kundenmanager", skills_title: "Meine",
-          projects_title: "Meine", videos_title: "Projekt", awarded_title: "Stipendium",
+          projects_title: "Meine", awarded_title: "Stipendium",
           awarded_desc: "Vollfinanziertes Stipendium für Cybersicherheit.",
           certificates_title: "Zertifikate", contact_title: "Kontakt"
         },
@@ -575,11 +557,11 @@
           nav_contact: "İletişim", greeting: "Merhaba, Ben",
           home_desc: "Java, Spring Boot ve modern web teknolojilerinde uzman yazılım geliştirici.",
           download_cv: "Özgeçmiş", about_heading: "Hakkımda",
-          about_text: "Java ve full-stack geliştirme konusunda uzman bilgisayar bilimleri mezunuyum.",
+          about_text: "Ben Md. Aminul Islam, Java ve full-stack geliştirme konusunda uzman bir bilgisayar bilimleri mezunuyum.",
           education_title: "Eğitimim", hsc: "Lise", ssc: "Ortaokul",
           experience_title: "Deneyimim", job1: "Yazılım Geliştirici Stajyer",
           job2: "Uluslararası Müşteri Yöneticisi", skills_title: "Yeteneklerim",
-          projects_title: "Projelerim", videos_title: "Proje", awarded_title: "Burs",
+          projects_title: "Projelerim", awarded_title: "Burs",
           awarded_desc: "Siber güvenlik alanında tam burslu program.",
           certificates_title: "Sertifikalar", contact_title: "İletişim"
         },
@@ -590,11 +572,11 @@
           nav_contact: "Контакт", greeting: "Здраво, јас сум",
           home_desc: "Страстен софтверски развивач со експертиза во Java, Spring Boot и модерни веб технологии.",
           download_cv: "Преземи CV", about_heading: "За",
-          about_text: "Дипломиран информатичар со фокус на Java и full‑stack развој.",
+          about_text: "Јас сум Md. Aminul Islam, дипломиран информатичар со фокус на Java и full‑stack.",
           education_title: "Мое", hsc: "Средно", ssc: "Основно",
           experience_title: "Мое", job1: "Софтверски стажант",
           job2: "Меѓународен менаџер за клиенти", skills_title: "Мои",
-          projects_title: "Мои", videos_title: "Проект", awarded_title: "Стипендија",
+          projects_title: "Мои", awarded_title: "Стипендија",
           awarded_desc: "Целосно финансирана стипендија за сајбер безбедност.",
           certificates_title: "Сертификати", contact_title: "Контакт"
         }
@@ -602,7 +584,6 @@
 
       let currentLang = 'en';
       const langSelect = document.getElementById('languageSwitcher');
-
       function applyLanguage(lang) {
         currentLang = lang;
         document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -613,13 +594,11 @@
         });
         localStorage.setItem('portfolioLang', lang);
       }
-
       langSelect.addEventListener('change', (e) => applyLanguage(e.target.value));
       const savedLang = localStorage.getItem('portfolioLang') || 'en';
       langSelect.value = savedLang;
       applyLanguage(savedLang);
 
-      // ---------- DARK / LIGHT MODE ----------
       const themeToggle = document.getElementById('themeToggle');
       function setTheme(mode) {
         if (mode === 'light') {
@@ -638,7 +617,6 @@
       const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
       setTheme(savedTheme);
 
-      // ---------- MOBILE MENU ----------
       const menuIcon = document.getElementById('menu-icon');
       const navbar = document.querySelector('.navbar');
       menuIcon.addEventListener('click', () => {
@@ -652,7 +630,6 @@
         });
       });
 
-      // ---------- TYPED JS ----------
       new Typed('.multiple-text', {
         strings: ['Software Developer', 'Java Expert', 'Backend Developer', 'Cybersecurity Enthusiast'],
         typeSpeed: 100,
@@ -661,12 +638,10 @@
         loop: true
       });
 
-      // ---------- SCROLL REVEAL ----------
       ScrollReveal({ distance: '80px', duration: 2000, delay: 200 });
       ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
       ScrollReveal().reveal('.home-img, .services-box, .project-box, .achievement-box, .education-box, .experience-box', { origin: 'bottom' });
 
-      // active nav on scroll
       window.addEventListener('scroll', () => {
         let sections = document.querySelectorAll('section');
         let navLinks = document.querySelectorAll('.navbar a');
